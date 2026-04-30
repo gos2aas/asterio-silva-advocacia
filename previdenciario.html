@@ -2,769 +2,718 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Asterio Silva Advocacia | Direito Previdenciário</title>
-  <meta name="description" content="INSS negou seu benefício ou cortou sem motivo? Auxílio-doença, auxílio-acidente, aposentadoria, BPC/LOAS — fale com um advogado especialista.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direito Previdenciário | Asterio Silva Advocacia</title>
 
-  <!-- ✏️ FONTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== VARIÁVEIS ===== */
-    :root {
-      --preto: #07100f;
-      --branco: #f2f7f4;
-      --verde: #1a7a4a;
-      --verde-claro: #22a360;
-      --verde-acento: #2ecc71;
-      --cinza: #3a4a3e;
-      --cinza-claro: #c8d9ce;
-      --borda: rgba(26,122,74,0.3);
+    :root{
+      --bg:#050505;
+      --panel:rgba(16,16,18,0.76);
+      --panel-strong:rgba(9,9,10,0.88);
+      --gold:#d3ad62;
+      --gold-soft:#e8d4a0;
+      --green:#4fe08a;
+      --green-soft:#9cf0bd;
+      --text:#f5f1e8;
+      --muted:#d4ccbe;
+      --muted-2:#aaa294;
+      --stroke:rgba(211,173,98,0.28);
+      --stroke-green:rgba(79,224,138,0.22);
+      --shadow:0 24px 70px rgba(0,0,0,0.48);
+      --max:1240px;
     }
 
-    /* ===== RESET ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--preto);
-      color: var(--branco);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 17px;
-      line-height: 1.65;
-      overflow-x: hidden;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    /* ===== UTILITÁRIOS ===== */
-    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-    .destaque { color: var(--verde-acento); }
-    .linha-verde {
-      display: inline-block;
-      width: 48px; height: 3px;
-      background: var(--verde-claro);
-      margin-bottom: 20px;
+    html{
+      scroll-behavior:smooth;
     }
 
-    /* ===== HEADER ===== */
-    header {
-      padding: 28px 0 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(7,16,15,0.95);
-      backdrop-filter: blur(8px);
-    }
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .logo-placeholder {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      color: var(--branco);
-      line-height: 1.2;
-    }
-    .logo-placeholder span { color: var(--verde-acento); }
-    .logo-placeholder small {
-      display: block;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--cinza-claro);
-      margin-top: 2px;
-    }
-    .badge-oab {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--cinza-claro);
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 6px 14px;
-      border-radius: 2px;
+    body{
+      font-family:'Inter', sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 82% 12%, rgba(79,224,138,0.12), transparent 26%),
+        radial-gradient(circle at 18% 18%, rgba(211,173,98,0.14), transparent 24%),
+        radial-gradient(circle at 50% 75%, rgba(255,255,255,0.025), transparent 20%),
+        linear-gradient(180deg, #030303 0%, #090909 48%, #050505 100%);
+      min-height:100vh;
+      overflow-x:hidden;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      padding: 80px 0 64px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -160px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(26,122,74,0.13) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--verde-acento);
-      border: 1px solid var(--borda);
-      padding: 6px 14px;
-      border-radius: 2px;
-      margin-bottom: 28px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 6vw, 60px);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      margin-bottom: 28px;
-      max-width: 720px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--verde-acento);
-    }
-    .hero p.sub {
-      font-size: 19px;
-      color: var(--cinza-claro);
-      max-width: 600px;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    .btn-wpp {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: #25D366;
-      color: #fff;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 17px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 6px 32px rgba(37,211,102,0.30);
-    }
-    .btn-wpp:hover { background: #1ebe5d; transform: translateY(-2px); }
-    .btn-wpp svg { flex-shrink: 0; }
-    .hero-nota {
-      margin-top: 16px;
-      font-size: 13px;
-      color: #5a7a62;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .hero-nota::before {
-      content: '';
-      display: inline-block;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #25D366;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 72% 28%, rgba(79,224,138,0.06), transparent 16%),
+        radial-gradient(circle at 22% 76%, rgba(211,173,98,0.08), transparent 18%);
+      mix-blend-mode:screen;
+      z-index:0;
     }
 
-    /* ===== BENEFÍCIOS ===== */
-    .beneficios {
-      padding: 72px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--verde-claro);
-      margin-bottom: 12px;
-    }
-    .section-titulo {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 38px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 48px;
-      max-width: 560px;
-    }
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-left: 3px solid var(--verde-claro);
-      padding: 28px 24px;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-    .card:hover { background: rgba(255,255,255,0.055); }
-    .card-icone { font-size: 28px; margin-bottom: 14px; line-height: 1; }
-    .card h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--branco);
-    }
-    .card p { font-size: 14px; color: #6b8a73; line-height: 1.6; }
-
-    /* ===== SITUAÇÕES ===== */
-    .situacoes {
-      padding: 72px 0;
-      background: rgba(26,122,74,0.04);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .situacoes-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    @media (max-width: 680px) {
-      .situacoes-inner { grid-template-columns: 1fr; gap: 40px; }
-    }
-    .lista-sit {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .lista-sit li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
-      color: var(--cinza-claro);
-    }
-    .lista-sit li::before {
-      content: '→';
-      color: var(--verde-acento);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .caixa-destaque {
-      background: var(--verde);
-      padding: 36px 32px;
-      border-radius: 4px;
-    }
-    .caixa-destaque p {
-      font-size: 20px;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      line-height: 1.4;
-      color: #fff;
-      margin-bottom: 24px;
-    }
-    .caixa-destaque .btn-wpp {
-      background: #fff;
-      color: var(--verde);
-      box-shadow: none;
-      font-size: 14px;
-      padding: 14px 24px;
-      border-radius: 50px;
-    }
-    .caixa-destaque .btn-wpp:hover { background: #e8f5ee; }
-
-    /* ===== QUEM SOU ===== */
-    .quem { padding: 72px 0; }
-    .quem-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    @media (max-width: 680px) {
-      .quem-inner { grid-template-columns: 1fr; gap: 32px; }
-    }
-    .quem-foto {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #3a5a42;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .quem-texto h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 3.5vw, 34px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .quem-texto p {
-      font-size: 15px;
-      color: #6b8a73;
-      margin-bottom: 16px;
-      line-height: 1.7;
-    }
-    .quem-texto .oab-tag {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--verde-acento);
-      border: 1px solid var(--borda);
-      padding: 5px 12px;
-      border-radius: 2px;
-      margin-top: 8px;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    /* ===== CTA FINAL ===== */
-    .cta-final {
-      padding: 80px 0;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-final::before {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 400px;
-      background: radial-gradient(circle, rgba(26,122,74,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-final h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .cta-final p {
-      font-size: 17px;
-      color: #6b8a73;
-      max-width: 500px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      position:relative;
+      z-index:1;
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      text-align: center;
-    }
-    footer p { font-size: 12px; color: #3a5a42; line-height: 1.6; }
-    footer a { color: #4a7a52; text-decoration: none; }
-    footer a:hover { color: var(--verde-acento); }
-
-
-    details[open] summary span { content: "−"; transform: rotate(45deg); }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] { background: rgba(255,255,255,0.05) !important; }
-
-    /* ===== ANIMAÇÕES ===== */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero h1, .hero p.sub, .hero .btn-wpp { animation: fadeUp 0.6s ease both; }
-    .hero p.sub  { animation-delay: 0.1s; }
-    .hero .btn-wpp { animation-delay: 0.2s; }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 520px) {
-      .badge-oab { display: none; }
-      .hero { padding: 56px 0 48px; }
-      .btn-wpp { width: 100%; justify-content: center; }
+    .topbar{
+      padding:28px 0 18px;
+      border-bottom:1px solid rgba(255,255,255,0.07);
+      position:relative;
+      z-index:3;
+      background:rgba(0,0,0,0.28);
+      backdrop-filter:blur(10px);
     }
 
-    /* ===== SCROLL ANIMATIONS ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      min-width:0;
     }
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-32px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+
+    .brand img{
+      width:96px;
+      height:96px;
+      object-fit:contain;
+      border-radius:16px;
+      background:#090909;
+      box-shadow:0 14px 38px rgba(0,0,0,0.34);
     }
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
+
+    .brand-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2.1rem;
+      line-height:0.95;
+      font-weight:700;
+      letter-spacing:0.2px;
     }
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(32px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+
+    .brand-subtitle{
+      margin-top:6px;
+      color:var(--gold-soft);
+      font-size:0.92rem;
+      letter-spacing:0.13em;
+      text-transform:uppercase;
     }
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(0.94);
-      transition: opacity 0.55s ease, transform 0.55s ease;
+
+    .oab{
+      border:1px solid var(--stroke);
+      color:var(--gold-soft);
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:0.9rem;
+      font-weight:700;
+      letter-spacing:0.06em;
+      white-space:nowrap;
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
     }
-    .reveal-scale.visible {
-      opacity: 1;
-      transform: scale(1);
+
+    .nav-link{
+      color:var(--muted);
+      font-size:0.95rem;
+      font-weight:600;
+      transition:color .2s ease;
     }
-    /* stagger delay para cards */
-    .reveal:nth-child(1) { transition-delay: 0s; }
-    .reveal:nth-child(2) { transition-delay: 0.1s; }
-    .reveal:nth-child(3) { transition-delay: 0.2s; }
-    .reveal:nth-child(4) { transition-delay: 0.3s; }
-    .reveal:nth-child(5) { transition-delay: 0.4s; }
-    .reveal:nth-child(6) { transition-delay: 0.5s; }
+
+    .nav-link:hover{
+      color:var(--gold-soft);
+    }
+
+    .hero{
+      padding:72px 0 48px;
+    }
+
+    .hero-panel{
+      position:relative;
+      border:1px solid var(--stroke);
+      border-radius:36px;
+      padding:56px 48px;
+      background:
+        linear-gradient(180deg, rgba(17,17,19,0.82), rgba(8,8,9,0.90)),
+        radial-gradient(circle at top right, rgba(79,224,138,0.075), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(211,173,98,0.08), transparent 28%);
+      box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,0.045);
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      width:440px;
+      height:440px;
+      right:-150px;
+      top:-150px;
+      background:radial-gradient(circle, rgba(79,224,138,0.10), transparent 62%);
+      filter:blur(8px);
+      z-index:-1;
+    }
+
+    .hero-panel::after{
+      content:"";
+      position:absolute;
+      width:340px;
+      height:340px;
+      left:-130px;
+      bottom:-110px;
+      background:radial-gradient(circle, rgba(211,173,98,0.12), transparent 62%);
+      filter:blur(8px);
+      z-index:-1;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border:1px solid var(--stroke-green);
+      border-radius:999px;
+      color:var(--green-soft);
+      background:rgba(79,224,138,0.055);
+      font-size:0.88rem;
+      font-weight:800;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      margin-bottom:26px;
+    }
+
+    .hero h1{
+      max-width:900px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(3.4rem, 7vw, 6.5rem);
+      line-height:0.92;
+      letter-spacing:-0.045em;
+      font-weight:700;
+      margin-bottom:28px;
+      text-wrap:balance;
+    }
+
+    .hero h1 span{
+      color:var(--green);
+      text-shadow:0 0 36px rgba(79,224,138,0.20);
+    }
+
+    .hero-text{
+      max-width:850px;
+      color:var(--muted);
+      font-size:1.22rem;
+      line-height:1.78;
+      text-align:justify;
+      margin-bottom:34px;
+    }
+
+    .cta-row{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:17px 28px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:1.04rem;
+      transition:transform .24s ease, box-shadow .24s ease, filter .24s ease;
+      border:1px solid rgba(232,212,160,0.22);
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg, #e0bf7b 0%, #caa459 100%);
+      color:#101010;
+      box-shadow:0 18px 38px rgba(202,164,89,0.25), inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+
+    .btn-secondary{
+      color:var(--text);
+      background:rgba(255,255,255,0.045);
+      border-color:rgba(255,255,255,0.14);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+    }
+
+    .notice{
+      margin-top:22px;
+      max-width:820px;
+      color:var(--muted-2);
+      font-size:0.96rem;
+      line-height:1.7;
+    }
+
+    .section{
+      padding:46px 0;
+    }
+
+    .section-header{
+      max-width:860px;
+      margin-bottom:28px;
+    }
+
+    .section-label{
+      color:var(--gold-soft);
+      font-size:0.9rem;
+      font-weight:800;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.7rem, 5vw, 4.6rem);
+      line-height:0.98;
+      letter-spacing:-0.04em;
+      margin-bottom:16px;
+    }
+
+    .section-description{
+      color:var(--muted);
+      font-size:1.16rem;
+      line-height:1.78;
+      text-align:justify;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:22px;
+    }
+
+    .card{
+      border:1px solid var(--stroke);
+      border-radius:28px;
+      padding:30px;
+      background:
+        linear-gradient(180deg, rgba(18,18,20,0.78), rgba(8,8,9,0.88)),
+        radial-gradient(circle at top right, rgba(255,255,255,0.035), transparent 26%);
+      box-shadow:0 20px 60px rgba(0,0,0,0.34);
+      min-height:260px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      width:160px;
+      height:160px;
+      right:-70px;
+      bottom:-70px;
+      background:radial-gradient(circle, rgba(211,173,98,0.11), transparent 65%);
+    }
+
+    .card-number{
+      color:var(--gold-soft);
+      font-weight:800;
+      letter-spacing:0.12em;
+      font-size:0.86rem;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2.05rem;
+      line-height:1.02;
+      margin-bottom:16px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:1.02rem;
+      line-height:1.72;
+      text-align:justify;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .glass-box{
+      border:1px solid var(--stroke);
+      border-radius:30px;
+      padding:36px;
+      background:
+        linear-gradient(180deg, rgba(18,18,20,0.80), rgba(8,8,9,0.88)),
+        radial-gradient(circle at top left, rgba(79,224,138,0.06), transparent 24%);
+      box-shadow:var(--shadow);
+    }
+
+    .glass-box h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.55rem, 4.5vw, 4.4rem);
+      line-height:0.98;
+      letter-spacing:-0.04em;
+      margin-bottom:22px;
+    }
+
+    .glass-box p{
+      color:var(--muted);
+      font-size:1.13rem;
+      line-height:1.82;
+      text-align:justify;
+      margin-bottom:16px;
+    }
+
+    .list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .list-item{
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.035);
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .list-item strong{
+      color:var(--gold-soft);
+    }
+
+    .cta-section{
+      padding:54px 0 74px;
+    }
+
+    .cta-box{
+      text-align:center;
+      border:1px solid var(--stroke);
+      border-radius:34px;
+      padding:46px 34px;
+      background:
+        radial-gradient(circle at top right, rgba(211,173,98,0.11), transparent 30%),
+        linear-gradient(180deg, rgba(18,18,20,0.82), rgba(8,8,9,0.90));
+      box-shadow:var(--shadow);
+    }
+
+    .cta-box h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.7rem, 5vw, 4.8rem);
+      line-height:0.98;
+      letter-spacing:-0.04em;
+      margin-bottom:18px;
+    }
+
+    .cta-box p{
+      max-width:820px;
+      margin:0 auto 28px;
+      color:var(--muted);
+      font-size:1.16rem;
+      line-height:1.78;
+    }
+
+    .footer{
+      border-top:1px solid rgba(255,255,255,0.07);
+      padding:30px 0 42px;
+      color:var(--muted-2);
+      text-align:center;
+      line-height:1.7;
+      font-size:0.98rem;
+    }
+
+    @media(max-width:1050px){
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .split{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:760px){
+      .container{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      .topbar{
+        padding:18px 0 14px;
+      }
+
+      .topbar-inner{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .brand img{
+        width:74px;
+        height:74px;
+      }
+
+      .brand-title{
+        font-size:1.75rem;
+      }
+
+      .brand-subtitle{
+        font-size:0.8rem;
+      }
+
+      .nav-actions{
+        width:100%;
+        justify-content:space-between;
+      }
+
+      .nav-link{
+        font-size:0.88rem;
+      }
+
+      .hero{
+        padding:32px 0 26px;
+      }
+
+      .hero-panel{
+        padding:30px 20px;
+        border-radius:26px;
+      }
+
+      .eyebrow{
+        font-size:0.76rem;
+        letter-spacing:0.11em;
+        padding:10px 13px;
+      }
+
+      .hero h1{
+        font-size:clamp(2.7rem, 13vw, 4.1rem);
+        line-height:0.94;
+      }
+
+      .hero-text{
+        font-size:1rem;
+        line-height:1.75;
+        text-align:left;
+      }
+
+      .cta-row{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .section{
+        padding:34px 0;
+      }
+
+      .section-description,
+      .card p,
+      .glass-box p{
+        text-align:left;
+      }
+
+      .card,
+      .glass-box{
+        padding:24px 20px;
+        border-radius:24px;
+      }
+
+      .card h3{
+        font-size:1.9rem;
+      }
+
+      .cta-box{
+        padding:34px 20px;
+        border-radius:26px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<!-- ============================
-     HEADER
-============================= -->
-<header>
-  <div class="container">
-    <div class="logo-wrap"><img id="site-logo" src="/images/logo-preto.jpg" alt="Asterio Silva Advocacia" style="height:52px;display:block;"></div>
-    <div class="badge-oab">OAB/RN 22.742</div>
-  </div>
-</header>
-
-
-<!-- ============================
-     HERO
-============================= -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-tag" id="hero-tag">Direito Previdenciário · Auxílio-Acidente · INSS</div>
-    <h1>O INSS negou<br>ou cortou seu <em>benefício</em>?<br>Você pode reverter.</h1>
-    <p class="sub">
-      Sofreu acidente, ficou com sequela e voltou ao trabalho? Pode ter direito ao <strong>auxílio-acidente</strong>. Auxílio-doença negado, BPC/LOAS indeferido — o INSS erra. E você tem prazo para reverter.
-    </p>
-    <!-- ✏️ Substitua SEU_NUMERO pelo número com DDA (ex: 5584999999999) -->
-    <a
-      class="btn-wpp"
-      href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Sofri%20um%20acidente%2C%20voltei%20ao%20trabalho%20e%20quero%20saber%20se%20tenho%20direito%20ao%20aux%C3%ADlio-acidente." class_wpp="btn-wpp-link"
-      target="_blank" rel="noopener"
-    >
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Falar com o Advogado
-    </a>
-    
-  </div>
-</section>
-
-
-<!-- ============================
-     BENEFÍCIOS QUE ATENDEMOS
-============================= -->
-<section class="beneficios">
-  <div class="container">
-    <div class="section-label reveal">Benefícios que atuamos</div>
-    <h2 class="section-titulo reveal">Qual é o seu caso com o INSS?</h2>
-    <div class="cards-grid">
-      <div class="card reveal" style="border-left-color:var(--verde-acento);background:rgba(46,204,113,0.07);">
-        <div class="card-icone">🦾</div>
-        <h3 style="color:var(--verde-acento);">Auxílio-acidente</h3>
-        <p>Sofreu acidente, ficou com sequela permanente e voltou ao trabalho? Pode ter direito ao benefício — mesmo sem afastamento atual.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icone">🩺</div>
-        <h3>Auxílio-doença</h3>
-        <p>O INSS negou ou cortou seu auxílio mesmo você ainda estando incapaz para o trabalho.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icone">👴</div>
-        <h3>BPC/LOAS — Idoso</h3>
-        <p>Você tem 65 anos ou mais, renda familiar baixa e o INSS negou o benefício assistencial.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icone">♿</div>
-        <h3>BPC/LOAS — Deficiência</h3>
-        <p>Pessoa com deficiência que tem impedimentos de longo prazo e renda familiar insuficiente.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icone">📅</div>
-        <h3>Aposentadoria por Idade</h3>
-        <p>Você atingiu a idade e tem tempo de contribuição, mas o INSS indeferiu ou calculou errado.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icone">🏥</div>
-        <h3>Aposentadoria por Invalidez</h3>
-        <p>Incapacidade total e permanente reconhecida — mas o INSS nega ou concede valor inferior.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================
-     SITUAÇÕES / O QUE FAZER
-============================= -->
-<section class="situacoes">
-  <div class="container">
-    <div class="situacoes-inner">
-      <div>
-        <div class="section-label reveal">O que você pode fazer</div>
-        <h2 class="section-titulo reveal">Negativa do INSS não é a palavra final.</h2>
-        <ul class="lista-sit reveal-left">
-          <li>Recorrer administrativamente dentro do prazo (recurso ao CRPS)</li>
-          <li>Ingressar com ação judicial no Juizado Especial Federal</li>
-          <li>Solicitar perícia complementar com laudo médico favorável</li>
-          <li>Receber os valores atrasados desde a data do requerimento</li>
-          <li>Atendimento remoto — sem precisar sair de casa</li>
-        </ul>
-      </div>
-      <div class="caixa-destaque reveal-scale">
-        <p>"Quem conhece a lei não deixa o INSS levar vantagem."</p>
-        <!-- ✏️ Substitua SEU_NUMERO -->
-        <a
-          class="btn-wpp"
-          href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Sofri%20um%20acidente%2C%20voltei%20ao%20trabalho%20e%20quero%20saber%20se%20tenho%20direito%20ao%20aux%C3%ADlio-acidente." class_wpp="btn-wpp-link"
-          target="_blank" rel="noopener"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quero analisar meu caso
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================
-     QUEM SOU
-============================= -->
-
-<!-- ============================
-     COMO FUNCIONA
-============================= -->
-<section style="padding:72px 0;border-top:1px solid rgba(255,255,255,0.06);">
-  <div class="container">
-    <div class="section-label reveal">Como funciona</div>
-    <h2 class="section-titulo reveal">Simples assim — três passos.</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;position:relative;">
-      <!-- linha conectora desktop -->
-      <div style="position:absolute;top:32px;left:16%;right:16%;height:1px;background:linear-gradient(90deg,transparent,rgba(46,204,113,0.3),transparent);pointer-events:none;"></div>
-      <div style="text-align:center;padding:0 20px;">
-        <div style="width:64px;height:64px;border-radius:50%;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--verde-acento);">1</div>
-        <h3 style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--branco);margin-bottom:8px;">Fale pelo WhatsApp</h3>
-        <p style="font-size:13px;color:#6b8a73;line-height:1.6;">Conta sua situação em poucas palavras. Sem formulário, sem burocracia.</p>
-      </div>
-      <div style="text-align:center;padding:0 20px;">
-        <div style="width:64px;height:64px;border-radius:50%;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--verde-acento);">2</div>
-        <h3 style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--branco);margin-bottom:8px;">Analisamos o caso</h3>
-        <p style="font-size:13px;color:#6b8a73;line-height:1.6;">Verificamos se você tem direito ao benefício e qual o melhor caminho.</p>
-      </div>
-      <div style="text-align:center;padding:0 20px;">
-        <div style="width:64px;height:64px;border-radius:50%;background:rgba(46,204,113,0.15);border:2px solid rgba(46,204,113,0.5);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--verde-acento);">3</div>
-        <h3 style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--branco);margin-bottom:8px;">Agimos pelo seu direito</h3>
-        <p style="font-size:13px;color:#6b8a73;line-height:1.6;">Entramos com o recurso ou a ação judicial. Você acompanha tudo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="quem">
-  <div class="container">
-    <div style="max-width:680px;">
-      <div class="linha-verde"></div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,34px);font-weight:700;line-height:1.2;margin-bottom:20px;">Asterio Silva Advocacia</h2>
-      <p style="font-size:15px;color:#6b8a73;margin-bottom:16px;line-height:1.7;">
-        Escritório especializado em Direito Previdenciário, com atuação em todo o Brasil 
-        na defesa de trabalhadores e segurados do INSS.
-      </p>
-      <p style="font-size:15px;color:#6b8a73;margin-bottom:16px;line-height:1.7;">
-        Atuamos com foco em benefícios negados, cancelados ou calculados incorretamente — 
-        especialmente nos casos de <strong style="color:var(--branco);">auxílio-acidente</strong>, 
-        onde o trabalhador retorna às atividades com sequela permanente e 
-        desconhece o direito ao benefício cumulativo.
-      </p>
-      <p style="font-size:15px;color:#6b8a73;margin-bottom:24px;line-height:1.7;">
-        Atendimento remoto, ágil e direto. Sem burocracia.
-      </p>
-      <span class="oab-tag">OAB/RN 22.742 · Asterio Silva</span>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================
-     CTA FINAL
-============================= -->
-
-<!-- ============================
-     FAQ
-============================= -->
-<section style="padding:72px 0;border-top:1px solid rgba(255,255,255,0.06);background:rgba(26,122,74,0.03);">
-  <div class="container">
-    <div class="section-label reveal">Dúvidas frequentes</div>
-    <h2 class="section-titulo" style="margin-bottom:36px;">Sobre o auxílio-acidente</h2>
-
-    <div style="max-width:700px;display:flex;flex-direction:column;gap:2px;">
-
-      <details class="reveal" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;cursor:pointer;">
-        <summary style="padding:20px 24px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--branco);list-style:none;display:flex;justify-content:space-between;align-items:center;user-select:none;">
-          Quem tem direito ao auxílio-acidente?
-          <span style="color:var(--verde-acento);font-size:20px;font-weight:300;flex-shrink:0;margin-left:16px;">+</span>
-        </summary>
-        <div style="padding:0 24px 20px;font-size:14px;color:#6b8a73;line-height:1.7;border-top:1px solid rgba(255,255,255,0.06);">
-          Todo trabalhador que recebeu auxílio-doença devido a um acidente sofrido e ficou com redução da sua capacidade física ou funcional — e ficou com <strong style="color:var(--branco);">sequela permanente que reduz sua capacidade laboral</strong>, mesmo tendo voltado a trabalhar. O benefício é pago mensalmente e pode ser acumulado com o salário.
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo-preto.jpg" alt="Asterio Silva Advocacia">
+        <div>
+          <div class="brand-title">Asterio Silva</div>
+          <div class="brand-subtitle">Advocacia previdenciária</div>
         </div>
-      </details>
+      </a>
 
-      <details class="reveal" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;cursor:pointer;">
-        <summary style="padding:20px 24px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--branco);list-style:none;display:flex;justify-content:space-between;align-items:center;user-select:none;">
-          O auxílio-acidente acumula com o salário?
-          <span style="color:var(--verde-acento);font-size:20px;font-weight:300;flex-shrink:0;margin-left:16px;">+</span>
-        </summary>
-        <div style="padding:0 24px 20px;font-size:14px;color:#6b8a73;line-height:1.7;border-top:1px solid rgba(255,255,255,0.06);">
-          Sim. O auxílio-acidente é um benefício indenizatório — ele <strong style="color:var(--branco);">não impede o trabalho</strong> e pode ser recebido junto com o salário. Muitos trabalhadores que têm direito simplesmente desconhecem isso.
-        </div>
-      </details>
-
-      <details class="reveal" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;cursor:pointer;">
-        <summary style="padding:20px 24px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--branco);list-style:none;display:flex;justify-content:space-between;align-items:center;user-select:none;">
-          O INSS negou o benefício — ainda tem jeito?
-          <span style="color:var(--verde-acento);font-size:20px;font-weight:300;flex-shrink:0;margin-left:16px;">+</span>
-        </summary>
-        <div style="padding:0 24px 20px;font-size:14px;color:#6b8a73;line-height:1.7;border-top:1px solid rgba(255,255,255,0.06);">
-          Sim — a negativa administrativa pode ser contestada por recurso ao CRPS ou por ação judicial no Juizado Especial Federal. <strong style="color:var(--branco);">O prazo é limitado</strong>, por isso é importante agir o quanto antes.
-        </div>
-      </details>
-
-      <details class="reveal" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;cursor:pointer;">
-        <summary style="padding:20px 24px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--branco);list-style:none;display:flex;justify-content:space-between;align-items:center;user-select:none;">
-          Posso receber os valores de meses anteriores?
-          <span style="color:var(--verde-acento);font-size:20px;font-weight:300;flex-shrink:0;margin-left:16px;">+</span>
-        </summary>
-        <div style="padding:0 24px 20px;font-size:14px;color:#6b8a73;line-height:1.7;border-top:1px solid rgba(255,255,255,0.06);">
-          Em muitos casos, sim. Os valores atrasados — chamados de <strong style="color:var(--branco);">parcelas retroativas</strong> — são calculados desde a data do requerimento ou da perícia, dependendo do caso. Fale com um advogado para saber exatamente a que você tem direito.
-        </div>
-      </details>
-
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">Página inicial</a>
+        <a class="nav-link" href="bancario.html">Direito Bancário</a>
+        <div class="oab">OAB/RN 22.742</div>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-panel">
+          <div class="eyebrow">Direito Previdenciário • INSS • Benefícios</div>
 
-<section class="cta-final">
-  <div class="container">
-    <h2>Não perca o prazo<br>do seu <span class="destaque">recurso</span>.</h2>
-    <p>Fale pelo WhatsApp e esclareça suas dúvidas com um advogado especialista.</p>
-    <!-- ✏️ Substitua SEU_NUMERO -->
-    <a
-      class="btn-wpp"
-      href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Sofri%20um%20acidente%2C%20voltei%20ao%20trabalho%20e%20quero%20saber%20se%20tenho%20direito%20ao%20aux%C3%ADlio-acidente." class_wpp="btn-wpp-link"
-      target="_blank" rel="noopener"
-    >
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Falar com o Advogado
-    </a>
-  </div>
-</section>
+          <h1>O INSS negou ou cortou seu <span>benefício?</span></h1>
 
+          <p class="hero-text">
+            A atuação previdenciária do escritório é voltada para pessoas que tiveram benefícios negados, suspensos, cessados ou calculados incorretamente. A análise jurídica permite identificar documentos, falhas administrativas e caminhos possíveis para buscar a concessão, revisão ou restabelecimento do benefício.
+          </p>
 
-<!-- ============================
-     FOOTER
-============================= -->
-<footer>
-  <div class="container">
-    <p>
-      Asterio Silva Advocacia · OAB/RN 22.742<br>
-      Atendimento em todo o Brasil · <a href="mailto:asteriosilva.adv@gmail.com">asteriosilva.adv@gmail.com</a>
-    </p>
-    <p style="margin-top:8px;">
-      Este site tem caráter exclusivamente informativo, em conformidade com o Provimento OAB nº 205/2021.
-    </p>
-  </div>
-</footer>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20previdenci%C3%A1ria%20da%20Asterio%20Silva%20Advocacia.%20Gostaria%20de%20enviar%20informa%C3%A7%C3%B5es%20sobre%20meu%20caso.">
+              Enviar informações pelo WhatsApp
+            </a>
 
+            <a class="btn btn-secondary" href="#areas">
+              Ver áreas de atuação
+            </a>
+          </div>
 
-<script>
-  // Intersection Observer para animações de scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+          <p class="notice">
+            O envio de mensagem não substitui a análise jurídica individualizada do caso. Cada situação depende da documentação, do histórico administrativo e das provas disponíveis.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // Todos os elementos com classes reveal
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
-      .forEach(el => observer.observe(el));
-  });
+    <section class="section" id="areas">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Atuação previdenciária</div>
+          <h2>Benefícios analisados com estratégia e documentação.</h2>
+          <p class="section-description">
+            A atuação começa pela compreensão do problema, conferência dos documentos e avaliação das medidas cabíveis. O objetivo é identificar se houve falha do INSS, ausência de análise adequada ou necessidade de complementação probatória.
+          </p>
+        </div>
 
-  // FAQ: trocar + por × ao abrir
-  document.querySelectorAll('details').forEach(d => {
-    d.addEventListener('toggle', () => {
-      const span = d.querySelector('summary span');
-      if (span) span.textContent = d.open ? '×' : '+';
-    });
-  });
-</script>
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Auxílio-acidente</h3>
+            <p>
+              Indicado para o trabalhador que sofreu acidente, retornou às atividades, mas permaneceu com sequela que reduziu sua capacidade laboral. Em muitos casos, a pessoa volta ao trabalho sem saber que pode ter direito a benefício cumulativo.
+            </p>
+          </article>
 
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Auxílio-doença</h3>
+            <p>
+              Análise de casos de incapacidade temporária, indeferimento administrativo, cessação indevida do benefício, necessidade de nova perícia e organização de documentos médicos para demonstrar a incapacidade.
+            </p>
+          </article>
 
-<script>
-// =============================================
-// CARREGAMENTO DINÂMICO DOS DADOS (previd.json)
-// =============================================
-(async function() {
-  try {
-    const res = await fetch('/_data/previd.json');
-    const d = await res.json();
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>BPC/LOAS e aposentadorias</h3>
+            <p>
+              Atuação em benefícios assistenciais, aposentadoria por incapacidade permanente e situações em que o benefício foi negado, cancelado ou calculado de forma incompatível com a realidade do segurado.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    // Logo
-    const logo = document.getElementById('site-logo');
-    if (logo && d.logo_src) {
-      logo.src = d.logo_src;
-      if (d.logo_altura) logo.style.height = d.logo_altura + 'px';
-    }
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="glass-box">
+            <h2>Por que a análise jurídica faz diferença?</h2>
 
-    // Email
-    document.querySelectorAll('a[href^="mailto:"]').forEach(el => {
-      el.href = 'mailto:' + d.email;
-      el.textContent = d.email;
-    });
+            <p>
+              Muitos indeferimentos previdenciários decorrem de documentação incompleta, perícia desfavorável, ausência de provas específicas ou interpretação inadequada da situação do segurado.
+            </p>
 
-    // Todos os botões WhatsApp
-    const msgs = [d.msg_whatsapp_hero, d.msg_whatsapp_cta, d.msg_whatsapp_cta];
-    document.querySelectorAll('[class_wpp="btn-wpp-link"]').forEach((btn, i) => {
-      const msg = encodeURIComponent(msgs[i] || msgs[0]);
-      btn.href = 'https://wa.me/' + d.whatsapp + '?text=' + msg;
-    });
+            <p>
+              A análise jurídica permite organizar os documentos, identificar a tese mais adequada e avaliar se o melhor caminho é a via administrativa, judicial ou a complementação prévia das provas.
+            </p>
+          </div>
 
-    // Footer
-    const footerP = document.querySelector('footer .container p');
-    if (footerP && d.footer_texto) {
-      footerP.innerHTML = d.footer_texto + '<br><a href="mailto:' + d.email + '">' + d.email + '</a>';
-    }
+          <div class="glass-box">
+            <h2>O que pode ser avaliado</h2>
 
-  } catch(e) {
-    // Se não conseguir carregar o JSON (ex: abrir arquivo local),
-    // mantém os valores padrão do HTML
-    console.warn('Dados dinâmicos não carregados:', e);
-  }
-})();
-</script>
+            <div class="list">
+              <div class="list-item">
+                <strong>Benefício negado:</strong> verificação dos motivos do indeferimento e dos documentos necessários.
+              </div>
+
+              <div class="list-item">
+                <strong>Benefício cancelado:</strong> análise da cessação, histórico médico e possibilidade de restabelecimento.
+              </div>
+
+              <div class="list-item">
+                <strong>Valor calculado incorretamente:</strong> conferência de vínculos, salários, períodos e critérios utilizados.
+              </div>
+
+              <div class="list-item">
+                <strong>Auxílio-acidente:</strong> análise da sequela permanente e da redução da capacidade laboral.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Seu benefício merece uma análise cuidadosa.</h2>
+
+          <p>
+            Envie as informações iniciais sobre o seu caso para que seja possível compreender o problema e indicar quais documentos devem ser avaliados.
+          </p>
+
+          <a class="btn btn-primary" href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20informa%C3%A7%C3%B5es%20sobre%20um%20caso%20previdenci%C3%A1rio.">
+            Enviar informações pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Asterio Silva Advocacia • OAB/RN 22.742 • Atendimento jurídico individualizado conforme análise do caso.
+    </div>
+  </footer>
 
 </body>
 </html>
