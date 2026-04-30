@@ -12,22 +12,16 @@
   <style>
     :root{
       --bg:#050505;
-      --panel:rgba(16,16,18,0.76);
-      --panel-strong:rgba(9,9,10,0.88);
       --gold:#d3ad62;
       --gold-soft:#e8d4a0;
       --green:#4fe08a;
       --green-soft:#9cf0bd;
       --red:#e25348;
       --red-soft:#ff9b90;
-      --whatsapp:#25d366;
-      --whatsapp-dark:#1fb457;
       --text:#f5f1e8;
       --muted:#d4ccbe;
       --muted-2:#aaa294;
       --stroke:rgba(211,173,98,0.28);
-      --stroke-green:rgba(79,224,138,0.22);
-      --stroke-red:rgba(226,83,72,0.26);
       --shadow:0 24px 70px rgba(0,0,0,0.48);
       --max:1240px;
     }
@@ -261,7 +255,7 @@
       font-size:1.20rem;
       line-height:1.78;
       text-align:justify;
-      margin-bottom:34px;
+      margin-bottom:0;
     }
 
     .hero-text strong{
@@ -269,45 +263,8 @@
       font-weight:800;
     }
 
-    .notice{
-      margin-top:22px;
-      max-width:860px;
-      color:var(--muted-2);
-      font-size:0.96rem;
-      line-height:1.7;
-    }
-
     .choice-section{
-      padding:28px 0 54px;
-    }
-
-    .section-header{
-      max-width:880px;
-      margin-bottom:28px;
-    }
-
-    .section-label{
-      color:var(--gold-soft);
-      font-size:0.9rem;
-      font-weight:800;
-      letter-spacing:0.16em;
-      text-transform:uppercase;
-      margin-bottom:14px;
-    }
-
-    .section-header h2{
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(2.7rem, 5vw, 4.6rem);
-      line-height:0.98;
-      letter-spacing:-0.04em;
-      margin-bottom:16px;
-    }
-
-    .section-description{
-      color:var(--muted);
-      font-size:1.16rem;
-      line-height:1.78;
-      text-align:justify;
+      padding:28px 0 72px;
     }
 
     .cards{
@@ -429,62 +386,6 @@
       filter:brightness(1.03);
     }
 
-    .info-section{
-      padding:28px 0 72px;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:28px;
-      align-items:stretch;
-    }
-
-    .glass-box{
-      border:1px solid var(--stroke);
-      border-radius:30px;
-      padding:36px;
-      background:
-        linear-gradient(180deg, rgba(18,18,20,0.80), rgba(8,8,9,0.88)),
-        radial-gradient(circle at top left, rgba(211,173,98,0.06), transparent 24%);
-      box-shadow:var(--shadow);
-    }
-
-    .glass-box h2{
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(2.55rem, 4.5vw, 4.4rem);
-      line-height:0.98;
-      letter-spacing:-0.04em;
-      margin-bottom:22px;
-    }
-
-    .glass-box p{
-      color:var(--muted);
-      font-size:1.13rem;
-      line-height:1.82;
-      text-align:justify;
-      margin-bottom:16px;
-    }
-
-    .list{
-      display:grid;
-      gap:14px;
-      margin-top:18px;
-    }
-
-    .list-item{
-      padding:16px 18px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.035);
-      color:var(--muted);
-      line-height:1.65;
-    }
-
-    .list-item strong{
-      color:var(--gold-soft);
-    }
-
     .footer{
       border-top:1px solid rgba(255,255,255,0.07);
       padding:30px 0 42px;
@@ -496,10 +397,6 @@
 
     @media(max-width:1050px){
       .cards{
-        grid-template-columns:1fr;
-      }
-
-      .split{
         grid-template-columns:1fr;
       }
 
@@ -544,10 +441,6 @@
       .brand img{
         width:72px;
         height:72px;
-      }
-
-      .brand-copy{
-        justify-content:center;
       }
 
       .brand-title{
@@ -601,27 +494,21 @@
       }
 
       .choice-section{
-        padding:22px 0 38px;
-      }
-
-      .section-description,
-      .card p,
-      .glass-box p{
-        text-align:left;
-      }
-
-      .card,
-      .glass-box{
-        padding:24px 20px;
-        border-radius:24px;
+        padding:22px 0 54px;
       }
 
       .card{
+        padding:24px 20px;
+        border-radius:24px;
         min-height:auto;
       }
 
       .card h2{
         font-size:2.45rem;
+      }
+
+      .card p{
+        text-align:left;
       }
 
       .btn{
@@ -630,10 +517,6 @@
         padding:18px 22px;
         font-size:0.98rem;
         line-height:1.2;
-      }
-
-      .info-section{
-        padding:20px 0 54px;
       }
     }
 
@@ -704,28 +587,12 @@
           <p class="hero-text">
             Escritório com atuação em demandas de <strong>Direito Bancário, Direito do Consumidor e Direito Previdenciário</strong>, com atendimento jurídico individualizado e análise estratégica de cada caso.
           </p>
-
-          <p class="hero-text">
-            As páginas foram separadas para manter a comunicação mais objetiva. Escolha abaixo a área relacionada ao seu problema para acessar informações específicas e seguir para o atendimento adequado.
-          </p>
-
-          <p class="notice">
-            Esta página tem finalidade institucional. Para campanhas e tráfego pago, serão utilizadas landing pages específicas, com foco em temas determinados.
-          </p>
         </div>
       </div>
     </section>
 
     <section class="choice-section">
       <div class="container">
-        <div class="section-header">
-          <div class="section-label">Escolha a área de atuação</div>
-          <h2>Encontre o caminho mais adequado para o seu caso.</h2>
-          <p class="section-description">
-            Cada área exige uma análise própria. Para evitar informações misturadas, o conteúdo foi dividido conforme o tipo de demanda.
-          </p>
-        </div>
-
         <div class="cards">
           <article class="card bancario">
             <div>
@@ -750,42 +617,6 @@
 
             <a class="btn btn-gold" href="previdenciario.html">Acessar página previdenciária</a>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <div class="container">
-        <div class="split">
-          <div class="glass-box">
-            <h2>Atendimento com análise individualizada.</h2>
-
-            <p>
-              Cada caso possui documentos, histórico e circunstâncias próprias. Por isso, a atuação jurídica começa pela compreensão do problema e pela avaliação dos elementos disponíveis.
-            </p>
-
-            <p>
-              O objetivo é orientar o cliente com clareza, sem promessas padronizadas e sem tratar situações diferentes como se fossem iguais.
-            </p>
-          </div>
-
-          <div class="glass-box">
-            <h2>Como escolher a página correta?</h2>
-
-            <div class="list">
-              <div class="list-item">
-                <strong>Direito Bancário:</strong> problemas com banco, conta bloqueada, golpe Pix, empréstimos, dívidas, descontos indevidos e cobranças abusivas.
-              </div>
-
-              <div class="list-item">
-                <strong>Direito Previdenciário:</strong> problemas com INSS, benefício negado, benefício cortado, auxílio-acidente, auxílio-doença, BPC/LOAS e aposentadorias.
-              </div>
-
-              <div class="list-item">
-                <strong>Landing pages:</strong> páginas específicas serão usadas em campanhas, com foco em temas determinados e atendimento mais direcionado.
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
