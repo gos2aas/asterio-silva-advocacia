@@ -1,0 +1,237 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: pt
+
+collections:
+
+  # ============================================================
+  # PÁGINA: PREVIDENCIÁRIO
+  # ============================================================
+  - name: "previd"
+    label: "📋 Página Previdenciário"
+    files:
+      - name: "previd"
+        label: "Editar Página Previdenciário"
+        file: "_data/previd.json"
+        fields:
+
+          - label: "━━━ WHATSAPP E CONTATO ━━━"
+            name: "sep1"
+            widget: "hidden"
+            default: ""
+
+          - label: "📱 Número do WhatsApp"
+            name: "whatsapp"
+            widget: "string"
+            hint: "Somente números com DDI. Ex: 5584999999999"
+
+          - label: "📧 E-mail de contato"
+            name: "email"
+            widget: "string"
+
+          - label: "💬 Mensagem automática — botão do hero"
+            name: "msg_whatsapp_hero"
+            widget: "string"
+
+          - label: "💬 Mensagem automática — botão CTA final"
+            name: "msg_whatsapp_cta"
+            widget: "string"
+
+          - label: "━━━ LOGO ━━━"
+            name: "sep2"
+            widget: "hidden"
+            default: ""
+
+          - label: "🖼️ Logo (imagem)"
+            name: "logo_src"
+            widget: "image"
+            hint: "Use a logo com fundo preto para o header escuro"
+
+          - label: "📐 Altura da logo (px)"
+            name: "logo_altura"
+            widget: "number"
+            default: 52
+            hint: "Altura em pixels. Padrão: 52"
+
+          - label: "━━━ HERO (primeira dobra) ━━━"
+            name: "sep3"
+            widget: "hidden"
+            default: ""
+
+          - label: "🏷️ Tag do hero (texto pequeno acima do título)"
+            name: "hero_tag"
+            widget: "string"
+
+          - label: "📝 Título — linha 1"
+            name: "hero_titulo_linha1"
+            widget: "string"
+
+          - label: "📝 Título — linha 2"
+            name: "hero_titulo_linha2"
+            widget: "string"
+
+          - label: "✨ Título — palavra em destaque (verde)"
+            name: "hero_titulo_destaque"
+            widget: "string"
+
+          - label: "📝 Título — linha 3"
+            name: "hero_titulo_linha3"
+            widget: "string"
+
+          - label: "📄 Subtítulo do hero"
+            name: "hero_subtitulo"
+            widget: "text"
+
+          - label: "🔘 Texto do botão WhatsApp (hero)"
+            name: "btn_hero"
+            widget: "string"
+
+          - label: "━━━ FAIXA DE CREDENCIAIS ━━━"
+            name: "sep4"
+            widget: "hidden"
+            default: ""
+
+          - label: "⭐ Credencial 1"
+            name: "credencial_1"
+            widget: "string"
+
+          - label: "⭐ Credencial 2"
+            name: "credencial_2"
+            widget: "string"
+
+          - label: "⭐ Credencial 3"
+            name: "credencial_3"
+            widget: "string"
+
+          - label: "━━━ CTA FINAL ━━━"
+            name: "sep5"
+            widget: "hidden"
+            default: ""
+
+          - label: "📝 Título do CTA final"
+            name: "cta_final_titulo"
+            widget: "string"
+
+          - label: "📄 Subtítulo do CTA final"
+            name: "cta_final_subtitulo"
+            widget: "text"
+
+          - label: "🔘 Texto do botão CTA final"
+            name: "btn_cta"
+            widget: "string"
+
+          - label: "━━━ FOOTER ━━━"
+            name: "sep6"
+            widget: "hidden"
+            default: ""
+
+          - label: "📌 Texto do rodapé"
+            name: "footer_texto"
+            widget: "string"
+
+  # ============================================================
+  # PÁGINA: BANCÁRIO
+  # ============================================================
+  - name: "bancario"
+    label: "🏦 Página Bancário"
+    files:
+      - name: "bancario"
+        label: "Editar Página Bancário"
+        file: "_data/bancario.json"
+        fields:
+
+          - label: "━━━ WHATSAPP E CONTATO ━━━"
+            name: "sep1"
+            widget: "hidden"
+            default: ""
+
+          - label: "📱 Número do WhatsApp"
+            name: "whatsapp"
+            widget: "string"
+            hint: "Somente números com DDI. Ex: 5584999999999"
+
+          - label: "📧 E-mail de contato"
+            name: "email"
+            widget: "string"
+
+          - label: "💬 Mensagem automática — botão do hero"
+            name: "msg_whatsapp_hero"
+            widget: "string"
+
+          - label: "💬 Mensagem automática — botão CTA final"
+            name: "msg_whatsapp_cta"
+            widget: "string"
+
+          - label: "━━━ LOGO ━━━"
+            name: "sep2"
+            widget: "hidden"
+            default: ""
+
+          - label: "🖼️ Logo (imagem)"
+            name: "logo_src"
+            widget: "image"
+
+          - label: "📐 Altura da logo (px)"
+            name: "logo_altura"
+            widget: "number"
+            default: 52
+
+          - label: "━━━ HERO (primeira dobra) ━━━"
+            name: "sep3"
+            widget: "hidden"
+            default: ""
+
+          - label: "🏷️ Tag do hero"
+            name: "hero_tag"
+            widget: "string"
+
+          - label: "📝 Título — linha 1"
+            name: "hero_titulo_linha1"
+            widget: "string"
+
+          - label: "✨ Título — palavra em destaque (vermelho)"
+            name: "hero_titulo_destaque"
+            widget: "string"
+
+          - label: "📝 Título — linha 2"
+            name: "hero_titulo_linha2"
+            widget: "string"
+
+          - label: "📄 Subtítulo do hero"
+            name: "hero_subtitulo"
+            widget: "text"
+
+          - label: "🔘 Texto do botão WhatsApp (hero)"
+            name: "btn_hero"
+            widget: "string"
+
+          - label: "━━━ CTA FINAL ━━━"
+            name: "sep4"
+            widget: "hidden"
+            default: ""
+
+          - label: "📝 Título do CTA final"
+            name: "cta_final_titulo"
+            widget: "string"
+
+          - label: "📄 Subtítulo do CTA final"
+            name: "cta_final_subtitulo"
+            widget: "text"
+
+          - label: "🔘 Texto do botão CTA final"
+            name: "btn_cta"
+            widget: "string"
+
+          - label: "━━━ FOOTER ━━━"
+            name: "sep5"
+            widget: "hidden"
+            default: ""
+
+          - label: "📌 Texto do rodapé"
+            name: "footer_texto"
+            widget: "string"

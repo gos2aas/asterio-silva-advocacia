@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asterio Silva Advocacia | Direito Bancário</title>
+  <meta name="description" content="Banco bloqueou sua conta, aplicou golpe no PIX ou te cobrou consignado indevido? Fale com um advogado especialista em Direito Bancário.">
+
+  <!-- ✏️ FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== VARIÁVEIS ===== */
+    :root {
+      --preto: #0a0a0a;
+      --branco: #f7f5f0;
+      --vermelho: #c0392b;
+      --vermelho-escuro: #922b21;
+      --cinza: #3d3d3d;
+      --cinza-claro: #d5d0c8;
+      --borda: rgba(192,57,43,0.25);
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--preto);
+      color: var(--branco);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ===== UTILITÁRIOS ===== */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .destaque { color: var(--vermelho); }
+    .linha-vermelho {
+      display: inline-block;
+      width: 48px; height: 3px;
+      background: var(--vermelho);
+      margin-bottom: 20px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      padding: 28px 0 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(8px);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo-wrap img {
+      height: 48px;
+      /* ✏️ SUBSTITUA pelo caminho da sua logo fundo preto: src="logo-fundo-preto.png" */
+      display: block;
+    }
+    /* Placeholder logo até você enviar a imagem */
+    .logo-placeholder {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--branco);
+      line-height: 1.2;
+    }
+    .logo-placeholder span { color: var(--vermelho); }
+    .logo-placeholder small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cinza-claro);
+      margin-top: 2px;
+    }
+    .badge-oab {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cinza-claro);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 80px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -180px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(192,57,43,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--vermelho);
+      border: 1px solid var(--borda);
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 6vw, 60px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      max-width: 720px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--vermelho);
+      position: relative;
+    }
+    .hero p.sub {
+      font-size: 19px;
+      color: var(--cinza-claro);
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .btn-wpp {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 17px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 6px 32px rgba(37,211,102,0.30);
+    }
+    .btn-wpp:hover { background: #1ebe5d; transform: translateY(-2px); }
+    .btn-wpp svg { flex-shrink: 0; }
+    .hero-nota {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-nota::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #25D366;
+    }
+
+    /* ===== PROBLEMAS ===== */
+    .problemas {
+      padding: 72px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--vermelho);
+      margin-bottom: 12px;
+    }
+    .section-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 48px;
+      max-width: 560px;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-left: 3px solid var(--vermelho);
+      padding: 28px 24px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .card:hover { background: rgba(255,255,255,0.055); }
+    .card-icone {
+      font-size: 28px;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+    .card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--branco);
+    }
+    .card p {
+      font-size: 14px;
+      color: #9a9690;
+      line-height: 1.6;
+    }
+
+    /* ===== DIREITOS ===== */
+    .direitos {
+      padding: 72px 0;
+      background: rgba(192,57,43,0.04);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .direitos-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 680px) {
+      .direitos-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .lista-direitos {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .lista-direitos li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--cinza-claro);
+    }
+    .lista-direitos li::before {
+      content: '→';
+      color: var(--vermelho);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .caixa-destaque {
+      background: var(--vermelho);
+      padding: 36px 32px;
+      border-radius: 4px;
+    }
+    .caixa-destaque p {
+      font-size: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .caixa-destaque .btn-wpp {
+      background: #fff;
+      color: var(--vermelho);
+      box-shadow: none;
+      font-size: 14px;
+      padding: 14px 24px;
+      border-radius: 50px;
+    }
+    .caixa-destaque .btn-wpp:hover { background: #f0ece6; }
+
+    /* ===== QUEM SOU ===== */
+    .quem {
+      padding: 72px 0;
+    }
+    .quem-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 680px) {
+      .quem-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+    .quem-foto {
+      /* ✏️ Substitua pelo caminho da foto quando tiver: background-image: url('foto.jpg'); */
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .quem-texto h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .quem-texto p {
+      font-size: 15px;
+      color: #9a9690;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    .quem-texto .oab-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--vermelho);
+      border: 1px solid var(--borda);
+      padding: 5px 12px;
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(circle, rgba(192,57,43,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-final h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .cta-final p {
+      font-size: 17px;
+      color: #9a9690;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+    footer p {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.6;
+    }
+    footer a { color: #777; text-decoration: none; }
+    footer a:hover { color: var(--vermelho); }
+
+    /* ===== ANIMAÇÕES ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1, .hero p.sub, .hero .btn-wpp {
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero p.sub  { animation-delay: 0.1s; }
+    .hero .btn-wpp { animation-delay: 0.2s; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 520px) {
+      .badge-oab { display: none; }
+      .hero { padding: 56px 0 48px; }
+      .btn-wpp { width: 100%; justify-content: center; }
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.94);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    /* stagger delay para cards */
+    .reveal:nth-child(1) { transition-delay: 0s; }
+    .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .reveal:nth-child(3) { transition-delay: 0.2s; }
+    .reveal:nth-child(4) { transition-delay: 0.3s; }
+    .reveal:nth-child(5) { transition-delay: 0.4s; }
+    .reveal:nth-child(6) { transition-delay: 0.5s; }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     HEADER
+============================= -->
+<header>
+  <div class="container">
+    <div class="logo-wrap"><img id="site-logo" src="/images/logo-preto.jpg" alt="Asterio Silva Advocacia" style="height:52px;display:block;"></div>
+    <div class="badge-oab">OAB/RN 22.742</div>
+  </div>
+</header>
+
+
+<!-- ============================
+     HERO
+============================= -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag">Direito Bancário</div>
+    <h1>O banco <em>errou</em>.<br>Você tem direito<br>de ser ressarcido.</h1>
+    <p class="sub">
+      Fraude no PIX, conta bloqueada indevidamente, desconto ilegal no consignado — 
+      esses problemas têm solução. E você não precisa aceitar calado.
+    </p>
+    <!-- ✏️ Substitua SEU_NUMERO pelo número com DDA (ex: 5584999999999) -->
+    <a
+      class="btn-wpp"
+      href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20preciso%20de%20ajuda%20com%20um%20problema%20com%20o%20meu%20banco." class_wpp="btn-wpp-link"
+      target="_blank" rel="noopener"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar com o Advogado
+    </a>
+    
+  </div>
+</section>
+
+
+<!-- ============================
+     PROBLEMAS
+============================= -->
+<section class="problemas">
+  <div class="container">
+    <div class="section-label reveal">Situações que atendemos</div>
+    <h2 class="section-titulo reveal">Você se identifica com alguma dessas situações?</h2>
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-icone">📵</div>
+        <h3>Conta bloqueada sem motivo</h3>
+        <p>O banco bloqueou sua conta ou reteve seu dinheiro sem aviso e sem justificativa clara.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icone">💸</div>
+        <h3>Fraude no PIX</h3>
+        <p>Você foi vítima de golpe via PIX e o banco se recusa a devolver o valor transferido.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icone">📋</div>
+        <h3>Desconto indevido no consignado</h3>
+        <p>Há parcelas de empréstimo descontadas que você não contratou ou já quitou.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icone">🔒</div>
+        <h3>Limite reduzido ou cancelado</h3>
+        <p>O banco reduziu ou cancelou seu limite de crédito de forma unilateral e abusiva.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icone">📑</div>
+        <h3>Cobrança de dívida prescrita</h3>
+        <p>Estão te cobrando ou negativando por uma dívida antiga que já passou do prazo legal.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icone">🤝</div>
+        <h3>Produto financeiro não solicitado</h3>
+        <p>Seguro, cartão ou serviço foi incluído na sua fatura sem que você tivesse pedido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     DIREITOS
+============================= -->
+<section class="direitos">
+  <div class="container">
+    <div class="direitos-inner">
+      <div>
+        <div class="section-label reveal">Seus direitos</div>
+        <h2 class="section-titulo reveal">O banco é obrigado por lei a responder por esses erros.</h2>
+        <ul class="lista-direitos reveal-left">
+          <li>Devolução integral dos valores cobrados ou retidos indevidamente</li>
+          <li>Indenização por danos morais quando há abuso ou negligência</li>
+          <li>Cancelamento de contratos não solicitados e estorno de cobranças</li>
+          <li>Retirada do nome dos cadastros de inadimplentes (SPC/Serasa)</li>
+          <li>Tudo isso sem precisar ir ao banco — a ação corre pelo Juizado Especial</li>
+        </ul>
+      </div>
+      <div class="caixa-destaque reveal-scale">
+        <p>"Não aceite a resposta do banco como definitiva. A lei está do seu lado."</p>
+        <!-- ✏️ Substitua SEU_NUMERO -->
+        <a
+          class="btn-wpp"
+          href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20preciso%20de%20ajuda%20com%20um%20problema%20com%20o%20meu%20banco." class_wpp="btn-wpp-link"
+          target="_blank" rel="noopener"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero saber meus direitos
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     QUEM SOU
+============================= -->
+<section class="quem">
+  <div class="container">
+    <div class="quem-inner" style="grid-template-columns:1fr;max-width:680px;">
+      <div class="quem-texto reveal-right">
+        <div class="linha-vermelho"></div>
+        <h2>Asterio Silva Advocacia</h2>
+        <p>
+          Escritório especializado em Direito Bancário e do Consumidor, com atuação 
+          nos Juizados Especiais Cíveis da comarca de Mossoró/RN e em todo o Brasil.
+        </p>
+        <p>
+          Nossa atuação é focada em resultado: analisamos o caso, identificamos a responsabilidade 
+          da instituição financeira e buscamos reparação integral — devolução dos valores e 
+          indenização por danos morais.
+        </p>
+        <p>
+          Atendimento ágil, direto e sem burocracia. Você não precisa entender de lei 
+          para defender seus direitos.
+        </p>
+        <span class="oab-tag">OAB/RN 22.742 · Asterio Silva</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     CTA FINAL
+============================= -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Seu caso merece<br>uma análise <span class="destaque">agora</span>.</h2>
+    <p>Fale pelo WhatsApp e tire suas dúvidas com um advogado especialista.</p>
+    <!-- ✏️ Substitua SEU_NUMERO -->
+    <a
+      class="btn-wpp"
+      href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20preciso%20de%20ajuda%20com%20um%20problema%20com%20o%20meu%20banco." class_wpp="btn-wpp-link"
+      target="_blank" rel="noopener"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar com o Advogado
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================
+     FOOTER
+============================= -->
+<footer>
+  <div class="container">
+    <p>
+      Asterio Silva Advocacia · OAB/RN 22.742<br>
+      Mossoró/RN · <a href="mailto:asteriosilva.adv@gmail.com">asteriosilva.adv@gmail.com</a>
+    </p>
+    <p style="margin-top:8px;">
+      Este site tem caráter exclusivamente informativo, em conformidade com o Provimento OAB nº 205/2021.
+    </p>
+  </div>
+</footer>
+
+
+<script>
+  // Intersection Observer para animações de scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Todos os elementos com classes reveal
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+      .forEach(el => observer.observe(el));
+  });
+
+  // FAQ: trocar + por × ao abrir
+  document.querySelectorAll('details').forEach(d => {
+    d.addEventListener('toggle', () => {
+      const span = d.querySelector('summary span');
+      if (span) span.textContent = d.open ? '×' : '+';
+    });
+  });
+</script>
+
+
+<script>
+(async function() {
+  try {
+    const res = await fetch('/_data/bancario.json');
+    const d = await res.json();
+
+    const logo = document.getElementById('site-logo');
+    if (logo && d.logo_src) {
+      logo.src = d.logo_src;
+      if (d.logo_altura) logo.style.height = d.logo_altura + 'px';
+    }
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(el => {
+      el.href = 'mailto:' + d.email;
+      el.textContent = d.email;
+    });
+
+    const msgs = [d.msg_whatsapp_hero, d.msg_whatsapp_cta, d.msg_whatsapp_cta];
+    document.querySelectorAll('[class_wpp="btn-wpp-link"]').forEach((btn, i) => {
+      const msg = encodeURIComponent(msgs[i] || msgs[0]);
+      btn.href = 'https://wa.me/' + d.whatsapp + '?text=' + msg;
+    });
+
+    const footerP = document.querySelector('footer .container p');
+    if (footerP && d.footer_texto) {
+      footerP.innerHTML = d.footer_texto + '<br><a href="mailto:' + d.email + '">' + d.email + '</a>';
+    }
+
+  } catch(e) {
+    console.warn('Dados dinâmicos não carregados:', e);
+  }
+})();
+</script>
+
+</body>
+</html>
