@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direito Previdenciário | Asterio Silva Advocacia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050505;
+      --panel:rgba(16,16,18,0.76);
+      --panel-strong:rgba(9,9,10,0.88);
+      --gold:#d3ad62;
+      --gold-soft:#e8d4a0;
+      --green:#4fe08a;
+      --green-soft:#9cf0bd;
+      --whatsapp:#25d366;
+      --whatsapp-dark:#1fb457;
+      --text:#f5f1e8;
+      --muted:#d4ccbe;
+      --muted-2:#aaa294;
+      --stroke:rgba(211,173,98,0.28);
+      --stroke-green:rgba(79,224,138,0.22);
+      --shadow:0 24px 70px rgba(0,0,0,0.48);
+      --max:1240px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 82% 12%, rgba(79,224,138,0.12), transparent 26%),
+        radial-gradient(circle at 18% 18%, rgba(211,173,98,0.14), transparent 24%),
+        radial-gradient(circle at 50% 75%, rgba(255,255,255,0.025), transparent 20%),
+        linear-gradient(180deg, #030303 0%, #090909 48%, #050505 100%);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 72% 28%, rgba(79,224,138,0.06), transparent 16%),
+        radial-gradient(circle at 22% 76%, rgba(211,173,98,0.08), transparent 18%);
+      mix-blend-mode:screen;
+      z-index:0;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+
+    .topbar{
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,0.07);
+      position:relative;
+      z-index:3;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.94), rgba(3,13,8,0.82), rgba(0,0,0,0.94));
+      backdrop-filter:blur(14px);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      max-width:1180px;
+      margin:0 auto;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      min-width:0;
+      padding-left:10px;
+    }
+
+    .brand img{
+      width:74px;
+      height:74px;
+      object-fit:contain;
+      border-radius:16px;
+      background:#090909;
+      box-shadow:0 12px 34px rgba(0,0,0,0.36);
+      flex-shrink:0;
+    }
+
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .brand-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.95rem;
+      line-height:0.95;
+      font-weight:700;
+      letter-spacing:0.2px;
+      color:var(--text);
+      white-space:nowrap;
+    }
+
+    .brand-subtitle{
+      margin-top:7px;
+      color:var(--gold-soft);
+      font-size:0.82rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .top-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 22px;
+      border-radius:999px;
+      color:var(--gold-soft);
+      border:1px solid rgba(211,173,98,0.28);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018));
+      box-shadow:
+        0 10px 24px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+      font-weight:700;
+      font-size:0.95rem;
+      transition:transform .2s ease, background .2s ease, color .2s ease;
+      white-space:nowrap;
+    }
+
+    .top-link:hover{
+      transform:translateY(-1px);
+      background:
+        linear-gradient(180deg, rgba(211,173,98,0.10), rgba(255,255,255,0.02));
+      color:#fff5df;
+    }
+
+    .hero{
+      padding:72px 0 48px;
+    }
+
+    .hero-panel{
+      position:relative;
+      border:1px solid var(--stroke);
+      border-radius:36px;
+      padding:56px 48px;
+      background:
+        linear-gradient(180deg, rgba(17,17,19,0.82), rgba(8,8,9,0.90)),
+        radial-gradient(circle at top right, rgba(79,224,138,0.075), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(211,173,98,0.08), transparent 28%);
+      box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,0.045);
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      width:440px;
+      height:440px;
+      right:-150px;
+      top:-150px;
+      background:radial-gradient(circle, rgba(79,224,138,0.10), transparent 62%);
+      filter:blur(8px);
+      z-index:-1;
+    }
+
+    .hero-panel::after{
+      content:"";
+      position:absolute;
+      width:340px;
+      height:340px;
+      left:-130px;
+      bottom:-110px;
+      background:radial-gradient(circle, rgba(211,173,98,0.12), transparent 62%);
+      filter:blur(8px);
+      z-index:-1;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:4px;
+      padding:14px 20px;
+      border:1px solid var(--stroke-green);
+      border-radius:26px;
+      color:var(--green-soft);
+      background:rgba(79,224,138,0.055);
+      font-size:0.88rem;
+      font-weight:800;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      margin-bottom:26px;
+      line-height:1.35;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.035);
+    }
+
+    .eyebrow span{
+      display:block;
+    }
+
+    .hero h1{
+      max-width:900px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(3.4rem, 7vw, 6.5rem);
+      line-height:0.92;
+      letter-spacing:-0.045em;
+      font-weight:700;
+      margin-bottom:28px;
+      text-wrap:balance;
+    }
+
+    .hero h1 span{
+      color:var(--green);
+      text-shadow:0 0 36px rgba(79,224,138,0.20);
+    }
+
+    .hero-text{
+      max-width:850px;
+      color:var(--muted);
+      font-size:1.22rem;
+      line-height:1.78;
+      text-align:justify;
+      margin-bottom:34px;
+    }
+
+    .cta-row{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:18px 30px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:1.02rem;
+      line-height:1.2;
+      text-align:center;
+      transition:transform .24s ease, box-shadow .24s ease, filter .24s ease;
+      border:1px solid rgba(232,212,160,0.22);
+      white-space:normal;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg, #31e783 0%, #25d366 48%, #1fb457 100%);
+      color:#07110a;
+      border-color:rgba(49,231,131,0.32);
+      box-shadow:
+        0 18px 42px rgba(37,211,102,0.24),
+        0 0 38px rgba(37,211,102,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.38);
+    }
+
+    .btn-secondary{
+      color:var(--text);
+      background:rgba(255,255,255,0.045);
+      border-color:rgba(255,255,255,0.14);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+    }
+
+    .notice{
+      margin-top:22px;
+      max-width:820px;
+      color:var(--muted-2);
+      font-size:0.96rem;
+      line-height:1.7;
+    }
+
+    .section{
+      padding:46px 0;
+    }
+
+    .section-header{
+      max-width:860px;
+      margin-bottom:28px;
+    }
+
+    .section-label{
+      color:var(--gold-soft);
+      font-size:0.9rem;
+      font-weight:800;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.7rem, 5vw, 4.6rem);
+      line-height:0.98;
+      letter-spacing:-0.04em;
+      margin-bottom:16px;
+    }
+
+    .section-description{
+      color:var(--muted);
+      font-size:1.16rem;
+      line-height:1.78;
+      text-align:justify;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:22px;
+    }
+
+    .card{
+      border:1px solid var(--stroke);
+      border-radius:28px;
+      padding:30px;
+      background:
+        linear-gradient(180deg, rgba(18,18,20,0.78), rgba(8,8,9,0.88)),
+        radial-gradient(circle at top right, rgba(255,255,255,0.035), transparent 26%);
+      box-shadow:0 20px 60px rgba(0,0,0,0.34);
+      min-height:260px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      width:160px;
+      height:160px;
+      right:-70px;
+      bottom:-70px;
+      background:radial-gradient(circle, rgba(211,173,98,0.11), transparent 65%);
+    }
+
+    .card-number{
+      color:var(--gold-soft);
+      font-weight:800;
+      letter-spacing:0.12em;
+      font-size:0.86rem;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2.05rem;
+      line-height:1.02;
+      margin-bottom:16px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:1.02rem;
+      line-height:1.72;
+      text-align:justify;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .glass-box{
+      border:1px solid var(--stroke);
+      border-radius:30px;
+      padding:36px;
+      background:
+        linear-gradient(180deg, rgba(18,18,20,0.80), rgba(8,8,9,0.88)),
+        radial-gradient(circle at top left, rgba(79,224,138,0.06), transparent 24%);
+      box-shadow:var(--shadow);
+    }
+
+    .glass-box h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.55rem, 4.5vw, 4.4rem);
+      line-height:0.98;
+      letter-spacing:-0.04em;
+      margin-bottom:22px;
+    }
+
+    .glass-box p{
+      color:var(--muted);
+      font-size:1.13rem;
+      line-height:1.82;
+      text-align:justify;
+      margin-bottom:16px;
+    }
+
+    .list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .list-item{
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.035);
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .list-item strong{
+      color:var(--gold-soft);
+    }
+
+    .cta-section{
+      padding:54px 0 74px;
+    }
+
+    .cta-box{
+      text-align:center;
+      border:1px solid var(--stroke);
+      border-radius:34px;
+      padding:46px 34px;
+      background:
+        radial-gradient(circle at top right, rgba(211,173,98,0.11), transparent 30%),
+        linear-gradient(180deg, rgba(18,18,20,0.82), rgba(8,8,9,0.90));
+      box-shadow:var(--shadow);
+    }
+
+    .cta-box h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.7rem, 5vw, 4.8rem);
+      line-height:0.98;
+      letter-spacing:-0.04em;
+      margin-bottom:18px;
+    }
+
+    .cta-box p{
+      max-width:820px;
+      margin:0 auto 28px;
+      color:var(--muted);
+      font-size:1.16rem;
+      line-height:1.78;
+    }
+
+    .footer{
+      border-top:1px solid rgba(255,255,255,0.07);
+      padding:30px 0 42px;
+      color:var(--muted-2);
+      text-align:center;
+      line-height:1.7;
+      font-size:0.98rem;
+    }
+
+    .as-whatsapp-float{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      width:66px;
+      height:66px;
+      border-radius:50%;
+      background:linear-gradient(180deg, #35f08a 0%, #25d366 52%, #1ebe5d 100%);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      box-shadow:
+        0 18px 44px rgba(0,0,0,.34),
+        0 0 34px rgba(37,211,102,.36),
+        inset 0 1px 0 rgba(255,255,255,.42);
+      transition:transform .2s ease, filter .2s ease;
+    }
+
+    .as-whatsapp-float:hover{
+      transform:translateY(-3px) scale(1.03);
+      filter:brightness(1.04);
+    }
+
+    .as-whatsapp-float svg{
+      width:34px;
+      height:34px;
+      fill:#ffffff;
+      display:block;
+    }
+
+    @media(max-width:1050px){
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .split{
+        grid-template-columns:1fr;
+      }
+
+      .topbar-inner{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .brand{
+        padding-left:0;
+      }
+
+      .top-actions{
+        width:100%;
+      }
+    }
+
+    @media(max-width:760px){
+      .container{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      .topbar{
+        padding:18px 0 14px;
+      }
+
+      .topbar-inner{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:16px;
+      }
+
+      .brand{
+        width:100%;
+        justify-content:center;
+        padding-left:8px;
+        padding-right:8px;
+        gap:18px;
+      }
+
+      .brand img{
+        width:72px;
+        height:72px;
+      }
+
+      .brand-copy{
+        justify-content:center;
+      }
+
+      .brand-title{
+        font-size:1.75rem;
+      }
+
+      .brand-subtitle{
+        font-size:0.78rem;
+        letter-spacing:0.16em;
+      }
+
+      .top-actions{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .top-link{
+        width:100%;
+        min-height:56px;
+        font-size:1rem;
+      }
+
+      .hero{
+        padding:32px 0 26px;
+      }
+
+      .hero-panel{
+        padding:30px 20px;
+        border-radius:26px;
+      }
+
+      .eyebrow{
+        width:100%;
+        font-size:0.78rem;
+        letter-spacing:0.10em;
+        padding:12px 16px;
+        line-height:1.3;
+      }
+
+      .hero h1{
+        font-size:clamp(2.7rem, 13vw, 4.1rem);
+        line-height:0.94;
+      }
+
+      .hero-text{
+        font-size:1rem;
+        line-height:1.75;
+        text-align:left;
+      }
+
+      .cta-row{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+        min-height:74px;
+        padding:18px 22px;
+        font-size:0.98rem;
+        line-height:1.2;
+      }
+
+      .section{
+        padding:34px 0;
+      }
+
+      .section-description,
+      .card p,
+      .glass-box p{
+        text-align:left;
+      }
+
+      .card,
+      .glass-box{
+        padding:24px 20px;
+        border-radius:24px;
+      }
+
+      .card h3{
+        font-size:1.9rem;
+      }
+
+      .cta-box{
+        padding:34px 20px;
+        border-radius:26px;
+      }
+
+      .cta-box .btn{
+        min-height:76px;
+        font-size:0.98rem;
+      }
+
+      .as-whatsapp-float{
+        width:58px;
+        height:58px;
+        right:18px;
+        bottom:18px;
+      }
+
+      .as-whatsapp-float svg{
+        width:30px;
+        height:30px;
+      }
+    }
+
+    @media(max-width:430px){
+      .brand{
+        gap:16px;
+      }
+
+      .brand img{
+        width:66px;
+        height:66px;
+      }
+
+      .brand-title{
+        font-size:1.55rem;
+      }
+
+      .brand-subtitle{
+        font-size:0.70rem;
+        letter-spacing:0.12em;
+      }
+
+      .hero-panel{
+        padding:26px 18px;
+      }
+
+      .eyebrow{
+        font-size:0.75rem;
+      }
+
+      .btn{
+        font-size:0.96rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo-preto.jpg" alt="Asterio Silva Advocacia">
+        <div class="brand-copy">
+          <div class="brand-title">Asterio Silva</div>
+          <div class="brand-subtitle">Advocacia Previdenciária</div>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <a class="top-link" href="index.html">Página inicial</a>
+        <a class="top-link" href="bancario.html">Direito Bancário</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-panel">
+          <div class="eyebrow">
+            <span>Direito Previdenciário</span>
+            <span>Benefícios | INSS</span>
+          </div>
+
+          <h1>O INSS negou ou cortou seu <span>benefício?</span></h1>
+
+          <p class="hero-text">
+            A atuação previdenciária do escritório é voltada para pessoas que tiveram benefícios negados, suspensos, cessados ou calculados incorretamente. A análise jurídica permite identificar documentos, falhas administrativas e caminhos possíveis para buscar a concessão, revisão ou restabelecimento do benefício.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20previdenci%C3%A1ria%20da%20Asterio%20Silva%20Advocacia.%20Gostaria%20de%20enviar%20informa%C3%A7%C3%B5es%20sobre%20meu%20caso.">
+              Enviar informações pelo WhatsApp
+            </a>
+
+            <a class="btn btn-secondary" href="#areas">
+              Ver áreas de atuação
+            </a>
+          </div>
+
+          <p class="notice">
+            O envio de mensagem não substitui a análise jurídica individualizada do caso. Cada situação depende da documentação, do histórico administrativo e das provas disponíveis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="areas">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Atuação previdenciária</div>
+          <h2>Benefícios analisados com estratégia e documentação.</h2>
+          <p class="section-description">
+            A atuação começa pela compreensão do problema, conferência dos documentos e avaliação das medidas cabíveis. O objetivo é identificar se houve falha do INSS, ausência de análise adequada ou necessidade de complementação probatória.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Auxílio-acidente</h3>
+            <p>
+              Indicado para o trabalhador que sofreu acidente, retornou às atividades, mas permaneceu com sequela que reduziu sua capacidade laboral. Em muitos casos, a pessoa volta ao trabalho sem saber que pode ter direito a benefício cumulativo.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Auxílio-doença</h3>
+            <p>
+              Análise de casos de incapacidade temporária, indeferimento administrativo, cessação indevida do benefício, necessidade de nova perícia e organização de documentos médicos para demonstrar a incapacidade.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>BPC/LOAS e aposentadorias</h3>
+            <p>
+              Atuação em benefícios assistenciais, aposentadoria por incapacidade permanente e situações em que o benefício foi negado, cancelado ou calculado de forma incompatível com a realidade do segurado.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="glass-box">
+            <h2>Por que a análise jurídica faz diferença?</h2>
+
+            <p>
+              Muitos indeferimentos previdenciários decorrem de documentação incompleta, perícia desfavorável, ausência de provas específicas ou interpretação inadequada da situação do segurado.
+            </p>
+
+            <p>
+              A análise jurídica permite organizar os documentos, identificar a tese mais adequada e avaliar se o melhor caminho é a via administrativa, judicial ou a complementação prévia das provas.
+            </p>
+          </div>
+
+          <div class="glass-box">
+            <h2>O que pode ser avaliado</h2>
+
+            <div class="list">
+              <div class="list-item">
+                <strong>Benefício negado:</strong> verificação dos motivos do indeferimento e dos documentos necessários.
+              </div>
+
+              <div class="list-item">
+                <strong>Benefício cancelado:</strong> análise da cessação, histórico médico e possibilidade de restabelecimento.
+              </div>
+
+              <div class="list-item">
+                <strong>Valor calculado incorretamente:</strong> conferência de vínculos, salários, períodos e critérios utilizados.
+              </div>
+
+              <div class="list-item">
+                <strong>Auxílio-acidente:</strong> análise da sequela permanente e da redução da capacidade laboral.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Seu benefício merece uma análise cuidadosa.</h2>
+
+          <p>
+            Envie as informações iniciais sobre o seu caso para que seja possível compreender o problema e indicar quais documentos devem ser avaliados.
+          </p>
+
+          <a class="btn btn-primary" href="https://wa.me/5584991956643?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20informa%C3%A7%C3%B5es%20sobre%20um%20caso%20previdenci%C3%A1rio.">
+            Enviar informações pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Asterio Silva Advocacia • OAB/RN 22.742 • Atendimento jurídico individualizado conforme análise do caso.
+    </div>
+  </footer>
+
+  <a class="as-whatsapp-float" href="https://wa.me/5584991956643?text=Olá, vim da página de Direito Previdenciário e preciso de ajuda." target="_blank" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16.04 3C8.86 3 3.02 8.84 3.02 16.02c0 2.29.6 4.53 1.74 6.5L3 29l6.65-1.74a12.96 12.96 0 0 0 6.39 1.63h.01c7.18 0 13.02-5.84 13.02-13.02C29.07 8.84 23.22 3 16.04 3Zm0 23.68h-.01c-1.97 0-3.9-.53-5.59-1.54l-.4-.24-3.94 1.03 1.05-3.84-.26-.39a10.73 10.73 0 0 1-1.65-5.68c0-5.95 4.84-10.79 10.8-10.79 2.88 0 5.59 1.12 7.63 3.16a10.72 10.72 0 0 1 3.16 7.63c0 5.95-4.84 10.66-10.79 10.66Zm5.92-8.07c-.32-.16-1.9-.94-2.19-1.05-.29-.11-.5-.16-.71.16-.21.32-.82 1.05-1 1.26-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.5.14-.66.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.35-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.23 3.4 5.4 4.77.75.32 1.34.51 1.8.65.76.24 1.45.21 1.99.13.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
